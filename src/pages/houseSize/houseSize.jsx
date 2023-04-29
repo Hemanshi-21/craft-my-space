@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from "react";
 
 const HouseSize = () => {
-    const options = ["Select plot size", "Italy", "Spain", "Greece"];
+    const options = ["Select plot size", "Italy", "Spain", "Greece", "India"];
     const [selected, setSelected] = useState(options[0]);
     const submit = () => {
         console.log(selected);
