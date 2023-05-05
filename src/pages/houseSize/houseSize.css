@@ -1,8 +1,65 @@
-.houseSize-container{
-    background-color: #000;
-    color: #fff;
+.houseSize-section {
+    color: #000;
+    /* background-color: #000; */
+    /* height: 80vh; */
     text-align: center;
 }
+
 .user-profile {
-    color: red;
+    background: #9900c8;
+    padding: 1em;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.user-name {
+    text-align: right;
+    background-color: #eaea2f;
+    width: 40px;
+    border: 1px solid yellow;
+    border-radius: 50%;
+    height: 40px;
+    padding: 8px;
+    color: #000;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.houseSize__title {
+    margin-bottom: 1em;
+    padding-top: 3em;
+    font-size: 2em;
+    color: #4a4a4a;
+}
+
+.size-select {
+    display: block;
+    margin: auto;
+    width: 30%;
+    text-align: center;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 6px;
+    color: #323030;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.select-button {
+    background: #9900c8;
+    width: 30%;
+    border-radius: 3px;
+    margin-top: 2em;
+    padding: 6px;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #9900c8;
+    text-align: center;
+}
+
+.select-button:hover {
+    background-color: #fff;
+    color: #9900c8;
+    transition: background-color .6s;
 }

@@ -10,13 +10,14 @@ const HouseSize = () => {
     };
     return (
         <div className="houseSize-container">
-            <div className='user-profile'>
-                <p>HT</p>
+            <div className="user-profile">
+                <div className="user-name">HT</div>
             </div>
-            <div className='houseSize-section'>
-                <h1 className="houseSize__title">Welcome to Craft My Space</h1>
+            <div className="houseSize-section">
+                <h1 className="houseSize__title">Welcome to Craft My Space Dashboard</h1>
                 <form>
                     <select
+                    className='size-select'
                         value={selected}
                         onChange={(e) => setSelected(e.target.value)}>
                         {options.map((value) => (
@@ -24,10 +25,9 @@ const HouseSize = () => {
                                 {value}
                             </option>
                         ))}
-                        id="select"
                     </select>
-                    <button type="button" onClick={submit}>
-                        Submit
+                    <button type="button" onClick={submit} className="select-button">
+                        Select
                     </button>
                 </form>
             </div>
