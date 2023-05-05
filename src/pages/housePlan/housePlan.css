@@ -1,0 +1,68 @@
+.house-plan-container{
+    display: flex;
+}
+
+.house-plan-1{
+    width: 40%;
+    border-right: 2px ridge #898989;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.house-plan-2 {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.house-plan-2-image {
+    display: flex;
+}
+
+.house-plan-2-image img:nth-child(1){
+    border-right: 2px dotted #898989;
+}
+
+.house-plan-title,h3 {
+    text-align: center;
+}
+
+.house-plan-title{
+    color: #000;
+    text-transform: uppercase;
+    padding: 0.5em;
+    text-decoration: underline;
+    font-size: 2em;
+
+}
+
+h3{
+    color: #c18847;
+    font-size: 1.2em !important;
+}
+
+
+img{
+    width: 500px;
+    height: auto;
+    max-height: 500px;
+}
+
+.view-details-btn{
+    background: #9900c8;
+    width: 30%;
+    border-radius: 3px;
+    padding: 6px;
+    color: #fff;
+    font-weight: 600;
+    border: 1px solid #9900c8;
+    text-align: center;
+    margin: 10px auto;
+}
+
+.view-details-btn:hover {
+    background-color: #fff;
+    color: #9900c8;
+    transition: background-color .6s;
+}
