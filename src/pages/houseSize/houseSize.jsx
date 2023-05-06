@@ -14,7 +14,7 @@ const HouseSize = () => {
     }
     return (
         <div className="houseSize-container">
-            <div className="user-profile">
+            <div className="user-profile"> <h1 className="houseSize__title">Welcome to Craft My Space Dashboard</h1>
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic" className="user-name">
                         HT
@@ -25,7 +25,7 @@ const HouseSize = () => {
                 </Dropdown>
             </div>
             <div className="houseSize-section">
-                <h1 className="houseSize__title">Welcome to Craft My Space Dashboard</h1>
+               <h3>Select your plot size with dimension</h3>
                 <form>
                     <select
                         className='size-select'

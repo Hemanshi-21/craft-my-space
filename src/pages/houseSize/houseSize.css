@@ -1,16 +1,22 @@
 .houseSize-section {
     text-align: center;
+    margin: 4em;
+}
+
+.houseSize-section h3{
+    margin-bottom: 1em;
+    color: #575353 ;
 }
 
 .user-profile {
     background: #9900c8;
     padding: 1em;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
     cursor: pointer;
 }
 
-.user-name {
+#dropdown-basic {
     text-align: right;
     background-color: #eaea2f;
     width: 40px;
@@ -24,10 +30,12 @@
 }
 
 .houseSize__title {
-    margin-bottom: 1em;
-    padding-top: 3em;
-    font-size: 2em;
-    color: #4a4a4a;
+    font-size: 1.5em;
+    color: #fff;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    text-decoration: underline;
 }
 
 .size-select {

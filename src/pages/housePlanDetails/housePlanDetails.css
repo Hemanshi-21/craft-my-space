@@ -1,0 +1,38 @@
+.plan-desc-section{
+    display: flex;
+
+}
+
+.plan-desc-section img{
+    width: 60%;
+    max-height: fit-content;
+}
+
+.plan-details{
+    width: 40%;
+    padding-top: 2em;
+}
+
+.plan-details h3{
+    text-align: start;
+    color: #9900c8;
+}
+
+.plan-details ul h5{
+    color: #9900c8;
+    text-decoration: underline;
+    font-size: 1em;
+}
+
+.plan-details ul li{
+    padding: 3px;
+}
+
+.house-plan-details .user-profile h1{
+    font-size: 1.5em;
+    color: #fff;
+    width: 100%;
+    align-self: center;
+    text-align: center;
+    text-decoration: underline;
+}

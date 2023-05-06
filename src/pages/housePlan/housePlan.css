@@ -1,5 +1,6 @@
 .house-plan-container{
     display: flex;
+    margin-top: 4em;
 }
 
 .house-plan-1{
@@ -29,12 +30,12 @@
 }
 
 .house-plan-title{
-    color: #000;
-    text-transform: uppercase;
-    padding: 0.5em;
+    font-size: 1.5em;
+    color: #fff;
+    width: 100%;
+    align-self: center;
+    text-align: center;
     text-decoration: underline;
-    font-size: 2em;
-
 }
 
 h3{

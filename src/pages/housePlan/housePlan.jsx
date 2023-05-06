@@ -1,13 +1,29 @@
 import React from 'react'
 import "./housePlan.css"
+import "../houseSize/houseSize.css"
 import Ground600 from "../../assets/600-1-ground.jpeg"
 import Ground6001 from "../../assets/600-2-first.jpeg"
 import Ground6002 from "../../assets/600-2-ground.jpeg"
+import Dropdown from 'react-bootstrap/Dropdown';
 
 const HousePlan = () => {
+    const logout = () => {
+        console.log("here");
+    }
     return (
-        <>
-        <h1 className='house-plan-title'>House Plans</h1>
+        <div>
+            <div className="user-profile">
+            <h1 className='house-plan-title'>House Plans</h1>
+          <Dropdown>
+                    <Dropdown.Toggle variant="success" id="dropdown-basic" className="user-name">
+                        HT
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
+                </div>
+      
         <div className='house-plan-container'>
             <div className='house-plan-1'>
                 <h3>House Plan with ground floor</h3>
@@ -23,7 +39,7 @@ const HousePlan = () => {
                 <button className='view-details-btn'>View Details</button>
             </div>
         </div>
-        </>
+        </div>
     )
 }
 
