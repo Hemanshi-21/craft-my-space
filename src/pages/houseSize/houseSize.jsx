@@ -1,31 +1,49 @@
 import React from 'react'
 import { useState } from "react";
 import "./houseSize.css"
-import Dropdown from 'react-bootstrap/Dropdown';
+import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import {useLocation} from 'react-router-dom';
+import Navbar from '../../common/navbar';
 
 const HouseSize = () => {
-    const options = ["Select plot size", "600sq.ft (20*30)", "800sq.ft (25*40)", "1000sq.ft (25*40)", "1200sq.ft (30*40)", "1500sq.ft (25*50)", "1800sq.ft (30*60)", "2000sq.ft (31*65)", "2500sq.ft (34*71)", "2800sq.ft (40*70)", "3500sq.ft (50*90)"];
+    const navigate = useNavigate()
+    const location = useLocation();
+    let userName = (location.state.userName).split('')[0]
+
+    const options = ["Select plot size", "600 sq.ft (20*30)", "800 sq.ft (25*40)", "1000 sq.ft (25*40)", "1200 sq.ft (30*40)", "1500 sq.ft (25*50)", "1800 sq.ft (30*60)", "2000 sq.ft (31*65)", "2500 sq.ft (34*71)", "2800 sq.ft (40*70)", "3500 sq.ft (50*90)"];
     const [selected, setSelected] = useState(options[0]);
-    const submit = () => {
-        console.log(selected);
+
+
+    const submit = (e) => {
+        let selectedPlotSize = selected.split(" ")[0]
+        axios.post('http://localhost:9092/plot/getPlotsBySize', {
+            plotSize: selectedPlotSize,
+        })
+            .then(function (response) {
+                navigate(
+                    "/house-plan",
+                    {
+                        state: {
+                            housePlan:response.data.list,
+                            userName:userName
+                        }
+                    }
+
+                );
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
-    const logout = () => {
-        console.log("here");
-    }
+   
     return (
         <div className="houseSize-container">
             <div className="user-profile"> <h1 className="houseSize__title">Welcome to Craft My Space Dashboard</h1>
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic" className="user-name">
-                        HT
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
+                <Navbar userName={userName}/>
             </div>
             <div className="houseSize-section">
-               <h3>Select your plot size with dimension</h3>
+                <h3>Select your plot size with dimension</h3>
                 <form>
                     <select
                         className='size-select'
@@ -37,7 +55,7 @@ const HouseSize = () => {
                             </option>
                         ))}
                     </select>
-                    <button type="button" onClick={submit} className="select-button">
+                    <button type="button" onClick={(e) => submit(e)} className="select-button">
                         Select
                     </button>
                 </form>

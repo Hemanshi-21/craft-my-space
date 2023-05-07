@@ -4,8 +4,8 @@
 }
 
 .plan-desc-section img{
-    width: 60%;
-    max-height: fit-content;
+    width: 94%;
+    height: fit-content;
 }
 
 .plan-details{
@@ -35,4 +35,10 @@
     align-self: center;
     text-align: center;
     text-decoration: underline;
+}
+
+.plan-desc-images{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
 }

@@ -1,44 +1,82 @@
 import React from 'react'
 import "./housePlan.css"
 import "../houseSize/houseSize.css"
-import Ground600 from "../../assets/600-1-ground.jpeg"
-import Ground6001 from "../../assets/600-2-first.jpeg"
-import Ground6002 from "../../assets/600-2-ground.jpeg"
-import Dropdown from 'react-bootstrap/Dropdown';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import Navbar from '../../common/navbar';
+
 
 const HousePlan = () => {
-    const logout = () => {
-        console.log("here");
+    const navigate = useNavigate()
+    const location = useLocation();
+    let userName = (location.state.userName).split('')[0]
+    let housePlanImage = location.state.housePlan
+
+    const viewDetailsPage = (plan) => {
+        navigate(
+            "/house-plan-details",
+            {
+                state: {
+                    housePlanDetails: housePlanImage[plan],
+                    userName: userName
+                }
+            }
+
+        );
     }
     return (
         <div>
             <div className="user-profile">
-            <h1 className='house-plan-title'>House Plans</h1>
-          <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic" className="user-name">
-                        HT
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                </div>
-      
-        <div className='house-plan-container'>
-            <div className='house-plan-1'>
-                <h3>House Plan with ground floor</h3>
-                <img src={Ground600} alt="Ground600"></img>
-                <button className='view-details-btn'>View Details</button>
+                <h1 className='house-plan-title'>House Plans</h1>
+                <Navbar userName={userName}/>
             </div>
-            <div className='house-plan-2'>
-                <h3>House Plan with ground & first floor</h3>
-                <div className='house-plan-2-image'>
-                <img src={Ground6002} alt="Ground600"></img>
-                <img src={Ground6001} alt="Ground600"></img>
-                </div>
-                <button className='view-details-btn'>View Details</button>
+
+            <div className='house-plan-container'>
+                {
+                    housePlanImage.length > 1 ?
+                        <>
+                            <div className='house-plan-1'>
+                                <h3>House Plan for {housePlanImage[0].size}</h3>
+                                {
+                                    housePlanImage[0].images.map((image) => {
+                                        return (
+                                            <img src={`https://drive.google.com/uc?export=view&id=${image}`} alt="houseplan-1"></img>
+                                        )
+                                    })
+                                }
+
+                                <button className='view-details-btn' onClick={(plan)=>viewDetailsPage(0)}>View Details</button>
+                            </div>
+                            <div className='house-plan-2'>
+                                <h3>House Plan for {housePlanImage[1].size}</h3>
+                              
+                                    {
+                                        housePlanImage[1].images.map((image) => {
+                                            return (
+                                                <img src={`https://drive.google.com/uc?export=view&id=${image}`} alt="houseplan-2"></img>
+                                            )
+                                        })
+                                    }
+                               
+                                <button className='view-details-btn' onClick={(plan)=>viewDetailsPage(1)}>View Details</button>
+                            </div>
+                        </>
+                        :
+                        <div className='house-plan-1' style={{width:"100%"}}>
+                            <h3>House Plan for {housePlanImage[0].size}</h3>
+                            <div style={{display:"flex"}}>
+                            {
+                                    housePlanImage[0].images.map((image) => {
+                                        return (
+                                            <img src={`https://drive.google.com/uc?export=view&id=${image}`} alt="houseplan-1"></img>
+                                        )
+                                    })
+                                }
+                                </div>
+                            <button className='view-details-btn' onClick={(plan)=>viewDetailsPage(0)}>View Details</button>
+                        </div>
+                }
             </div>
-        </div>
         </div>
     )
 }

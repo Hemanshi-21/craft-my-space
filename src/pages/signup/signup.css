@@ -2,8 +2,15 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 2em auto;
+    width: 100%;
+    padding-top: 6em;
 }
+
+.signup-container__image-section {
+    width: 40%;
+
+}
+
 
 .signup-container__image-section__title {
     margin-left: 56px;
@@ -15,7 +22,7 @@
 }
 
 .signup-container__form-section {
-    width: 35%;
+    width: 80%;
     text-align: center;
     background: #000;
     color: #fff;
@@ -71,4 +78,27 @@
 .signup-container__form-section__title{
     font-size: 2em;
     margin-bottom: 1em;
+}
+
+.success {
+    color: #1dc81d;
+    font-size: 1.5em;
+    text-align: center;
+    width: 80%;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.error {
+    color: red;
+    font-size: 1.5em;
+    text-align: center;
+    width: 80%;
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.disabled{
+    background: #969297;
+cursor: not-allowed !important;
 }
