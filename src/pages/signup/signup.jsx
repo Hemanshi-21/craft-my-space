@@ -93,7 +93,7 @@ import { useNavigate } from "react-router-dom";
         style={{
           display: submitted ? '' : 'none',
         }}>
-        <h1>User {name} successfully registered!!</h1>
+        <p>User {name} successfully registered!!</p>
       </div>
     );
   };
@@ -106,7 +106,7 @@ import { useNavigate } from "react-router-dom";
         style={{
           display: error ? '' : 'none',
         }}>
-        <h1>{errorMsg}</h1>
+        <p>{errorMsg}</p>
       </div>
     );
   };
